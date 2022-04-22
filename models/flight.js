@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
 const destinationSchema = new Schema ({
@@ -32,7 +31,8 @@ const flightSchema = new Schema({
         type: Date,
         default: Date.now() + 365*24*60*60000
     },
-    destinations: [destinationSchema]
+    destinations: [destinationSchema],
+    
 });
 
 module.exports = mongoose.model('Flight', flightSchema);
